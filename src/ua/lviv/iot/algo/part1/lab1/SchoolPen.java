@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.*;
 
 @AllArgsConstructor
@@ -17,37 +18,30 @@ public class SchoolPen {
     private int numPens;
     private int numErasers;
 
-public int  addPencil()
-{
-return numPencils=numPencils+1;
-}
-public int addPen()
-{
-    return numPens=numPens+1;
-}
-public int removePencil()
-{
-    if (numPencils > 0)
+    public int  addPencil()
     {
-        return numPencils - 1;
-    } else
+        return numPencils+=1;
+    }       //changed
+    public int addPen()
     {
-        System.out.println("without pencil");
+        return numPens+=1;
+    }             //changed
+    public int removePencil()
+    {
+        if (numPencils > 0)
+        {
+            return numPencils - 1;
+        }
+        //deleted else
+        return 0;
     }
-    return 0;
-}
-
     public int removePen()
     {
         if (numPens > 0)
         {
             return numPens - 1;
+        }                                          //deleted else
 
-        }
-        else
-        {
-            System.out.println("without pen");
-        }
         return 0;
     }
 
@@ -65,6 +59,8 @@ public int removePencil()
         SchoolPen schoolPen3=getInstance();
         SchoolPen schoolPen4=getInstance();
 
+        SchoolPen[] schoolpens = {schoolPen1, schoolPen2, schoolPen3, schoolPen4}; //поміняв через фігурні дужки
+
         schoolPen1.addPen();
         schoolPen1.addPencil();
 
@@ -75,22 +71,14 @@ public int removePencil()
         schoolPen2.removePencil();
 
 
-        SchoolPen[] schoolpens= new SchoolPen[4];
-        schoolpens[0]=schoolPen1;
-        schoolpens[1]=schoolPen2;
-        schoolpens[2]=schoolPen3;
-        schoolpens[3]=schoolPen4;
 
 
-        int length = 4;
-        for (int i = 0; i <length;i++ )
-        {
-            System.out.println(schoolpens[i]);
+        for (SchoolPen i:schoolpens) {
+            System.out.println(i);                      //changed cycle
+
         }
 
-        for (int k = 0; k < schoolpens.length; k++) {
-            System.out.println(schoolpens.toString());
-        }
+
 
 
     }
