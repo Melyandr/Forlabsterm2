@@ -15,6 +15,12 @@ public class SchoolPen extends Pen{
     private static final int priceOfPen=10;
     private static final int priceOfPencil=7;
     private static final int priceOfEraser=4;
+    public SchoolPen(String id, String brand,String colour,String material,int size,int numPencils, int numPens, int numErasers){
+        super(id,brand, colour,material,size);
+        this.numPencils=numPencils;
+        this.numPens=numPens;
+        this.numErasers=numErasers;
+    }
 
     public int  addPencil()
     {
@@ -22,7 +28,7 @@ public class SchoolPen extends Pen{
     }
     public int addPen()
     {
-        return numPens+=1;
+        return this.numPens+=1;
     }
     public int removePencil() {
         int kilkist = 0;
@@ -60,6 +66,12 @@ public String toString(){
 
         System.out.println("price of schoolpen :"+ numPencils*priceOfPencil+numPens*priceOfPen+numErasers*priceOfEraser);
         return numPencils*priceOfPencil+numPens*priceOfPen+numErasers*priceOfEraser;
+    }
+    public String getHeaders(){
+        return super.getHeaders()+","+"numPencils"+","+"numPens"+ ","+"numErasers";
+    }
+    public String toCSV(){
+    return super.toCSV()+","+numPencils+","+numPens+","+numErasers;
     }
 }
 
