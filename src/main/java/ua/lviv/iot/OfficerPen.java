@@ -14,18 +14,16 @@ public class OfficerPen extends Pen{
     private static final int priceOfcurvimetr=35;
     private static final int priceOfCopebooks=12;
 
-    OfficerPen(String id, String brand, String colour, String material, int size, int curvimeter, int numMaps, int numCopybooks) {
-        super(id,brand,colour,material,size);
-        this.curvimeter = curvimeter;
-        this.numMaps = numMaps;
-        this.numCopybooks = numCopybooks;
-
-    }
+    OfficerPen(String colour, String material, int size, int curvimeter, int numMaps, int numCopybooks){
+        this.curvimeter=curvimeter;
+        this.numMaps=numMaps;
+        this.numCopybooks=numCopybooks;
+        setColour(colour);
+        setMaterial(material);
+        setSize(size);};
     @Override
     public String toString(){
-        return  "\nid " + getId() +
-                "\nbrand " + getBrand() +
-                "\ncolour " + getColour() +
+        return  "\ncolour " + getColour() +
                 "\nmaterial " + getMaterial() +
                 "\nsize" + getSize() +
                 "\ncurvimeter" + curvimeter +
@@ -38,11 +36,5 @@ public class OfficerPen extends Pen{
         System.out.println("price of officer penal "+ price);
 
         return price;
-    }
-    public String getHeaders(){
-        return super.getHeaders()+","+ "curvimeter"+","+"numMaps"+","+"numCopybooks";
-    }
-    public String toCSV(){
-        return super.toCSV()+","+curvimeter+","+numMaps+","+numCopybooks;
     }
 }
