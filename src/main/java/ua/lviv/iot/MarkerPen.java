@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot;
 
 import lombok.*;
 
@@ -23,9 +23,18 @@ public class MarkerPen extends Pen {
 
      }
     @Override
+    public String toString(){
+        return  "\ncolour " + getColour() +
+                "\nmaterial " + getMaterial() +
+                "\nsize" + getSize() +
+                "\ntypeOfMarker" + typeOfMarker +
+                "\nnumnumMarker" + numMarker;
+    }
+
+    @Override
     int calculatePrice() {
 
         System.out.println("price of markers "+numMarker*priceOfMarker);
-        return 0;
+        return numMarker*priceOfMarker ;
     }
 }

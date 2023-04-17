@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot;
 import lombok.*;
 
 @AllArgsConstructor
@@ -16,9 +16,19 @@ public class FelttipPen extends Pen {
         setColour(colour);
         setMaterial(material);
         setSize(size);}
+
+@Override
+    public String toString(){
+         return  "\ncolour " + getColour() +
+                "\nmaterial " + getMaterial() +
+                "\nsize" + getSize() +
+                "\nFelttip" + felttip +
+                "\nnumFelttip" + numFelttip;
+     }
     @Override
      int calculatePrice() {
-        System.out.println("price of FelttipPen  " + numFelttip * priceOfFelttip);
-        return 0;
+
+        System.out.println( numFelttip * priceOfFelttip);
+return numFelttip * priceOfFelttip;
     };
-};
+}

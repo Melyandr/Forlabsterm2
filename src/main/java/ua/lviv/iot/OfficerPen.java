@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot;
 import lombok.*;
 @AllArgsConstructor
 @ToString
@@ -21,6 +21,15 @@ public class OfficerPen extends Pen{
         setColour(colour);
         setMaterial(material);
         setSize(size);};
+    @Override
+    public String toString(){
+        return  "\ncolour " + getColour() +
+                "\nmaterial " + getMaterial() +
+                "\nsize" + getSize() +
+                "\ncurvimeter" + curvimeter +
+                "\nnumMaps" + numMaps +
+                "\nnumCopybooks" + numCopybooks;
+    }
     @Override
     public int calculatePrice() {
         int price=numMaps*priceOfMaps+curvimeter*priceOfcurvimetr+numCopybooks*priceOfCopebooks;
