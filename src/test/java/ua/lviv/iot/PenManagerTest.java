@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PenManagerTest {
 
     @Test
-    void addPlateTest(){
-        Pen pen = new MarkerPen("isn-101", "evev",2,"wcwcw",4);
-        int initialSize = PenManager.list.size();
+    void addPPenTest(){
+        Pen pen = new MarkerPen("isn-101","Kite","yeloow", "cloth", 2, "for school", 4);
+        int startSize = PenManager.list.size();
         PenManager.addPen(pen);
-        assertEquals(initialSize + 1, PenManager.list.size());
+        assertEquals(startSize + 1, PenManager.list.size());
     }
 
 }
